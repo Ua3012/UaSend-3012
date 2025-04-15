@@ -1,26 +1,29 @@
 <!DOCTYPE html>
-<html lang='en'>
+<html lang="en">
 <head>
-    <meta charset='UTF-8'>
-    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UaSend 3012</title>
-    <link rel='stylesheet' href='/style.css'>
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-    <div class='container'>
+    <div class="container">
         <h1>UaSend 3012</h1>
-        <form method='POST'>
-            <input type='text' name='username' placeholder='Your name' required>
-            <textarea name='message' placeholder='Your message' required></textarea>
-            <button type='submit'>Send</button>
-        </form>
-        <div class='chat'>
-            {% for msg in messages %}
-                <div class='msg'>
-                    <b>{{ msg.name }}</b>: {{ msg.msg }}
-                </div>
-            {% endfor %}
+        
+        <div class="login">
+            <h2>Login</h2>
+            <input type="text" id="username" placeholder="Enter your username" required>
+            <button onclick="login()">Login</button>
+        </div>
+
+        <div class="chat" style="display: none;">
+            <h2>Chat</h2>
+            <div id="messages"></div>
+            <input type="text" id="message" placeholder="Type a message..." required>
+            <button onclick="sendMessage()">Send</button>
         </div>
     </div>
+
+    <script src="app.js"></script>
 </body>
 </html>
